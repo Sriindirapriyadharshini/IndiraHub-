@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sneha Mart - Sports Products</title>
+    <title>IndiraHub - Electronics & Books</title>
 
     <style>
         * {
@@ -23,7 +23,6 @@
             background-color: #111;
             color: white;
             padding: 18px 40px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,7 +47,7 @@
             background-color: #c1121f;
         }
 
-        /* Welcome Section */
+        /* Welcome */
         .welcome {
             text-align: center;
             padding: 30px 20px;
@@ -76,7 +75,7 @@
             color: #555;
         }
 
-        /* Products Section */
+        /* Products */
         .products-section {
             padding: 30px 50px;
         }
@@ -85,6 +84,12 @@
             text-align: center;
             font-size: 28px;
             margin-bottom: 30px;
+        }
+
+        .category-title {
+            max-width: 1100px;
+            margin: 30px auto 20px;
+            font-size: 24px;
         }
 
         .products {
@@ -180,7 +185,7 @@
     <!-- HEADER -->
     <header>
 
-        <h1>Sneha Mart</h1>
+        <h1>IndiraHub</h1>
 
         <button class="logout" onclick="logout()">
             Logout
@@ -192,140 +197,271 @@
     <!-- WELCOME SECTION -->
     <section class="welcome">
 
-        <!-- Put sports-banner.jpg in the same folder -->
-        <img src="sports-banner.jpg" alt="Sneha Mart Sports">
+        <img
+            src="electronics-books-banner.jpg"
+            alt="IndiraHub Electronics and Books">
 
-        <h2>Welcome to Sneha Mart</h2>
+        <h2>Welcome to IndiraHub</h2>
 
         <p>
-            Your one-stop destination for quality sports and fitness products
+            Your one-stop destination for electronics and books
         </p>
 
     </section>
 
 
-    <!-- PRODUCTS -->
+    <!-- PRODUCTS SECTION -->
     <section class="products-section">
 
-        <h2>Our Sports Products</h2>
+        <h2>Our Products</h2>
+
+
+        <!-- ELECTRONICS -->
+        <h3 class="category-title">📱 Electronics</h3>
 
         <div class="products">
 
-
-            <!-- PRODUCT 1 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Football"
-                    alt="Football">
+                    src="https://via.placeholder.com/250x180?text=Laptop"
+                    alt="Laptop">
 
-                <h3>Football</h3>
+                <h3>Laptop</h3>
 
-                <p>Professional quality football</p>
+                <p>High-performance laptop</p>
 
-                <p class="price">₹799</p>
+                <p class="price">₹45,999</p>
 
-                <button class="cart" onclick="addToCart('Football')">
+                <button class="cart"
+                    onclick="addToCart('Laptop')">
                     Add to Cart
                 </button>
 
             </div>
 
 
-            <!-- PRODUCT 2 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Cricket+Bat"
-                    alt="Cricket Bat">
+                    src="https://via.placeholder.com/250x180?text=Smartphone"
+                    alt="Smartphone">
 
-                <h3>Cricket Bat</h3>
+                <h3>Smartphone</h3>
 
-                <p>Premium cricket bat</p>
+                <p>Latest Android smartphone</p>
 
-                <p class="price">₹1,499</p>
+                <p class="price">₹19,999</p>
 
-                <button class="cart" onclick="addToCart('Cricket Bat')">
+                <button class="cart"
+                    onclick="addToCart('Smartphone')">
                     Add to Cart
                 </button>
 
             </div>
 
 
-            <!-- PRODUCT 3 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Basketball"
-                    alt="Basketball">
+                    src="https://via.placeholder.com/250x180?text=Headphones"
+                    alt="Headphones">
 
-                <h3>Basketball</h3>
+                <h3>Headphones</h3>
 
-                <p>Official size basketball</p>
+                <p>Wireless headphones</p>
+
+                <p class="price">₹2,499</p>
+
+                <button class="cart"
+                    onclick="addToCart('Headphones')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=Smartwatch"
+                    alt="Smartwatch">
+
+                <h3>Smartwatch</h3>
+
+                <p>Smart fitness smartwatch</p>
+
+                <p class="price">₹1,999</p>
+
+                <button class="cart"
+                    onclick="addToCart('Smartwatch')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=Keyboard"
+                    alt="Keyboard">
+
+                <h3>Keyboard</h3>
+
+                <p>Wireless computer keyboard</p>
 
                 <p class="price">₹899</p>
 
-                <button class="cart" onclick="addToCart('Basketball')">
+                <button class="cart"
+                    onclick="addToCart('Keyboard')">
                     Add to Cart
                 </button>
 
             </div>
 
 
-            <!-- PRODUCT 4 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Gym+Gloves"
-                    alt="Gym Gloves">
+                    src="https://via.placeholder.com/250x180?text=Power+Bank"
+                    alt="Power Bank">
 
-                <h3>Gym Gloves</h3>
+                <h3>Power Bank</h3>
 
-                <p>Comfortable workout gloves</p>
+                <p>10000mAh portable power bank</p>
+
+                <p class="price">₹799</p>
+
+                <button class="cart"
+                    onclick="addToCart('Power Bank')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKS -->
+        <h3 class="category-title">📚 Books</h3>
+
+        <div class="products">
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=Java"
+                    alt="Java Book">
+
+                <h3>Java Programming</h3>
+
+                <p>Complete Java programming guide</p>
+
+                <p class="price">₹599</p>
+
+                <button class="cart"
+                    onclick="addToCart('Java Programming Book')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=C+Programming"
+                    alt="C Programming Book">
+
+                <h3>C Programming</h3>
+
+                <p>Learn C programming from basics</p>
 
                 <p class="price">₹499</p>
 
-                <button class="cart" onclick="addToCart('Gym Gloves')">
+                <button class="cart"
+                    onclick="addToCart('C Programming Book')">
                     Add to Cart
                 </button>
 
             </div>
 
 
-            <!-- PRODUCT 5 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Dumbbells"
-                    alt="Dumbbells">
+                    src="https://via.placeholder.com/250x180?text=Python"
+                    alt="Python Book">
 
-                <h3>Dumbbells</h3>
+                <h3>Python Programming</h3>
 
-                <p>5kg fitness dumbbells</p>
+                <p>Python programming for beginners</p>
 
-                <p class="price">₹1,299</p>
+                <p class="price">₹699</p>
 
-                <button class="cart" onclick="addToCart('Dumbbells')">
+                <button class="cart"
+                    onclick="addToCart('Python Programming Book')">
                     Add to Cart
                 </button>
 
             </div>
 
 
-            <!-- PRODUCT 6 -->
             <div class="product">
 
                 <img
-                    src="https://via.placeholder.com/250x180?text=Badminton"
-                    alt="Badminton Racket">
+                    src="https://via.placeholder.com/250x180?text=Data+Structures"
+                    alt="Data Structures Book">
 
-                <h3>Badminton Racket</h3>
+                <h3>Data Structures</h3>
 
-                <p>Lightweight badminton racket</p>
+                <p>Learn important data structures</p>
 
-                <p class="price">₹999</p>
+                <p class="price">₹749</p>
 
-                <button class="cart" onclick="addToCart('Badminton Racket')">
+                <button class="cart"
+                    onclick="addToCart('Data Structures Book')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=Computer+Networks"
+                    alt="Computer Networks Book">
+
+                <h3>Computer Networks</h3>
+
+                <p>Networking concepts and fundamentals</p>
+
+                <p class="price">₹799</p>
+
+                <button class="cart"
+                    onclick="addToCart('Computer Networks Book')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://via.placeholder.com/250x180?text=Novel"
+                    alt="English Novel">
+
+                <h3>English Novel</h3>
+
+                <p>Popular fiction novel</p>
+
+                <p class="price">₹399</p>
+
+                <button class="cart"
+                    onclick="addToCart('English Novel')">
                     Add to Cart
                 </button>
 
@@ -339,7 +475,7 @@
     <!-- FOOTER -->
     <footer>
 
-        <p>© 2026 Sneha Mart | Sports & Fitness Store</p>
+        <p>© 2026 IndiraHub | Electronics & Books Store</p>
 
     </footer>
 
@@ -364,4 +500,11 @@
 
 </body>
 
-</html>
+</html>        
+
+                
+        
+
+            
+
+                            
