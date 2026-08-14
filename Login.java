@@ -4,20 +4,61 @@ class Login {
 
     static Scanner sc = new Scanner(System.in);
 
+    // User details
+    static String userUsername;
+    static String userPassword;
+
+    // Seller details
+    static String sellerUsername;
+    static String sellerPassword;
+
+    // Register User
+    static void registerUser() {
+
+        System.out.println("\n========== USER REGISTRATION ==========");
+
+        System.out.print("Create Username: ");
+        userUsername = sc.nextLine();
+
+        System.out.print("Create Password: ");
+        userPassword = sc.nextLine();
+
+        System.out.println("User Registration Successful!");
+    }
+
+    // Register Seller
+    static void registerSeller() {
+
+        System.out.println("\n========== SELLER REGISTRATION ==========");
+
+        System.out.print("Create Username: ");
+        sellerUsername = sc.nextLine();
+
+        System.out.print("Create Password: ");
+        sellerPassword = sc.nextLine();
+
+        System.out.println("Seller Registration Successful!");
+    }
+
+    // Login
     static boolean login(String role) {
 
         String correctUsername;
         String correctPassword;
 
         if (role.equalsIgnoreCase("user")) {
-            correctUsername = "Indira";
-            correctPassword = "1234";
+            correctUsername = userUsername;
+            correctPassword = userPassword;
         } else {
-            correctUsername = "Seller";
-            correctPassword = "5678";
+            correctUsername = sellerUsername;
+            correctPassword = sellerPassword;
         }
 
-        System.out.println("\n========== INDIRAHUB " + role.toUpperCase() + " LOGIN ==========");
+        System.out.println(
+            "\n========== INDIRAHUB "
+            + role.toUpperCase()
+            + " LOGIN =========="
+        );
 
         for (int attempt = 1; attempt <= 3; attempt++) {
 
@@ -34,8 +75,11 @@ class Login {
                 return true;
 
             } else {
+
                 System.out.println("Invalid Username or Password!");
-                System.out.println("Attempts remaining: " + (3 - attempt));
+                System.out.println(
+                    "Attempts remaining: " + (3 - attempt)
+                );
             }
         }
 
@@ -46,31 +90,49 @@ class Login {
     public static void main(String[] args) {
 
         System.out.println("\n========== INDIRAHUB ==========");
-        System.out.println("1. User Login");
-        System.out.println("2. Seller Login");
+        System.out.println("1. Register User");
+        System.out.println("2. Register Seller");
+        System.out.println("3. User Login");
+        System.out.println("4. Seller Login");
+        System.out.println("5. Exit");
 
         System.out.print("Enter your choice: ");
         int choice = sc.nextInt();
         sc.nextLine();
 
-        if (choice == 1) {
+        switch (choice) {
 
-            if (login("User")) {
-                System.out.println("Welcome to IndiraHub User!");
-            } else {
-                System.out.println("Please try again later.");
-            }
+            case 1:
+                registerUser();
+                break;
 
-        } else if (choice == 2) {
+            case 2:
+                registerSeller();
+                break;
 
-            if (login("Seller")) {
-                System.out.println("Welcome to IndiraHub Seller!");
-            } else {
-                System.out.println("Please try again later.");
-            }
+            case 3:
+                if (userUsername == null) {
+                    System.out.println("No user registered yet.");
+                } else if (login("User")) {
+                    System.out.println("Welcome to IndiraHub User!");
+                }
+                break;
 
-        } else {
-            System.out.println("Invalid choice!");
+            case 4:
+                if (sellerUsername == null) {
+                    System.out.println("No seller registered yet.");
+                } else if (login("Seller")) {
+                    System.out.println("Welcome to IndiraHub Seller!");
+                }
+                break;
+
+            case 5:
+                System.out.println("Thank you for using IndiraHub!");
+                break;
+
+            default:
+                System.out.println("Invalid choice!");
         }
     }
 }
+            
