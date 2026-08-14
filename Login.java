@@ -4,12 +4,20 @@ class Login {
 
     static Scanner sc = new Scanner(System.in);
 
-    static boolean login() {
+    static boolean login(String role) {
 
-        String correctUsername = "Indira";
-        String correctPassword = "1234";
+        String correctUsername;
+        String correctPassword;
 
-        System.out.println("\n========== INDIRAHUB LOGIN ==========");
+        if (role.equalsIgnoreCase("user")) {
+            correctUsername = "Indira";
+            correctPassword = "1234";
+        } else {
+            correctUsername = "Seller";
+            correctPassword = "5678";
+        }
+
+        System.out.println("\n========== INDIRAHUB " + role.toUpperCase() + " LOGIN ==========");
 
         for (int attempt = 1; attempt <= 3; attempt++) {
 
@@ -37,10 +45,32 @@ class Login {
 
     public static void main(String[] args) {
 
-        if (login()) {
-            System.out.println("Welcome to IndiraHub!");
+        System.out.println("\n========== INDIRAHUB ==========");
+        System.out.println("1. User Login");
+        System.out.println("2. Seller Login");
+
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+        sc.nextLine();
+
+        if (choice == 1) {
+
+            if (login("User")) {
+                System.out.println("Welcome to IndiraHub User!");
+            } else {
+                System.out.println("Please try again later.");
+            }
+
+        } else if (choice == 2) {
+
+            if (login("Seller")) {
+                System.out.println("Welcome to IndiraHub Seller!");
+            } else {
+                System.out.println("Please try again later.");
+            }
+
         } else {
-            System.out.println("Please try again later.");
+            System.out.println("Invalid choice!");
         }
     }
 }
