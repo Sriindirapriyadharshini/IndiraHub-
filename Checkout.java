@@ -1,54 +1,47 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
-class Checkout {
+public class Checkout {
 
-    static void checkout(
-            ArrayList<CartItem> cart) {
+    public static void checkout(
+            User customer,
+            Cart cart) {
 
-        if (cart.isEmpty()) {
+        Scanner sc = new Scanner(System.in);
 
-            System.out.println(
-                    "Your cart is empty.");
-
+        if (cart.getItems().isEmpty()) {
+            System.out.println("Cart is empty.");
             return;
         }
 
-        double total = 0;
+        cart.displayCart();
 
-        for (CartItem item : cart) {
+        System.out.print("\nConfirm order? (yes/no): ");
+        String answer = sc.nextLine();
 
-            if (item.quantity >
-                    item.product.quantity) {
-
-                System.out.println(
-                        "Not enough stock for "
-                        + item.product.productName);
-
-                return;
-            }
-
-            total +=
-                    item.calculateTotal();
+        if (!answer.equalsIgnoreCase("yes")) {
+            System.out.println("Order cancelled.");
+            return;
         }
 
-        for (CartItem item : cart) {
+        for (OrderItem item : cart.getItems()) {
 
-            item.product.quantity -=
-                    item.quantity;
+            Product product = item.getProduct();
+
+            product.setQuantity(
+                product.getQuantity() -
+                item.getQuantity()
+            );
         }
 
-        System.out.println(
-                "\n========== INDIRAHUB CHECKOUT ==========");
+        Order order = OrderData.createOrder(
+            customer.getId(),
+            cart.getItems(),
+            cart.getTotal()
+        );
 
-        System.out.printf(
-                "Total Amount : ₹%.2f%n",
-                total);
-
-        System.out.println(
-                "Order placed successfully!");
-
-        System.out.println(
-                "========================================");
+        System.out.println("\nOrder placed successfully.");
+        System.out.println("Order ID: " + order.getOrderId());
+        System.out.println("Total: Rs." + order.getTotal());
 
         cart.clear();
     }
