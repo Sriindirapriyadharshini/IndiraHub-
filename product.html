@@ -1,510 +1,58 @@
-        <!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>IndiraHub - Electronics & Books</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        /* Header */
-        header {
-            background-color: #111;
-            color: white;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-
-        .logout {
-            background-color: #e63946;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .logout:hover {
-            background-color: #c1121f;
-        }
-
-        /* Welcome */
-        .welcome {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-        }
-
-        .welcome img {
-            width: 100%;
-            max-width: 1100px;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 15px;
-            display: block;
-            margin: auto;
-        }
-
-        .welcome h2 {
-            font-size: 32px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        .welcome p {
-            font-size: 18px;
-            color: #555;
-        }
-
-        /* Products */
-        .products-section {
-            padding: 30px 50px;
-        }
-
-        .products-section h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .category-title {
-            max-width: 1100px;
-            margin: 30px auto 20px;
-            font-size: 24px;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        /* Product Card */
-        .product {
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-        }
-
-        .product img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-        }
-
-        .product h3 {
-            font-size: 20px;
-            margin: 15px 0 8px;
-        }
-
-        .product p {
-            color: #666;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: green !important;
-        }
-
-        .cart {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .cart:hover {
-            background-color: #0056b3;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-
-            header {
-                padding: 15px 20px;
-            }
-
-            .welcome img {
-                height: 220px;
-            }
-
-            .products-section {
-                padding: 25px 20px;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>IndiraHub - Products</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
+<header>
+    <h1>IndiraHub</h1>
 
-        <h1>IndiraHub</h1>
+    <nav>
+        <a href="product.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+        <a href="login.html">Logout</a>
+    </nav>
+</header>
 
-        <button class="logout" onclick="logout()">
-            Logout
-        </button>
+<div class="page">
 
-    </header>
+    <h2>Products</h2>
 
+    <input type="text" placeholder="Search products">
 
-    <!-- WELCOME SECTION -->
-    <section class="welcome">
+    <div class="products">
 
-        <img
-            src="electronics-books-banner.jpg"
-            alt="IndiraHub Electronics and Books">
-
-        <h2>Welcome to IndiraHub</h2>
-
-        <p>
-            Your one-stop destination for electronics and books
-        </p>
-
-    </section>
-
-
-    <!-- PRODUCTS SECTION -->
-    <section class="products-section">
-
-        <h2>Our Products</h2>
-
-
-        <!-- ELECTRONICS -->
-        <h3 class="category-title">📱 Electronics</h3>
-
-        <div class="products">
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Laptop"
-                    alt="Laptop">
-
-                <h3>Laptop</h3>
-
-                <p>High-performance laptop</p>
-
-                <p class="price">₹45,999</p>
-
-                <button class="cart"
-                    onclick="addToCart('Laptop')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Smartphone"
-                    alt="Smartphone">
-
-                <h3>Smartphone</h3>
-
-                <p>Latest Android smartphone</p>
-
-                <p class="price">₹19,999</p>
-
-                <button class="cart"
-                    onclick="addToCart('Smartphone')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Headphones"
-                    alt="Headphones">
-
-                <h3>Headphones</h3>
-
-                <p>Wireless headphones</p>
-
-                <p class="price">₹2,499</p>
-
-                <button class="cart"
-                    onclick="addToCart('Headphones')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Smartwatch"
-                    alt="Smartwatch">
-
-                <h3>Smartwatch</h3>
-
-                <p>Smart fitness smartwatch</p>
-
-                <p class="price">₹1,999</p>
-
-                <button class="cart"
-                    onclick="addToCart('Smartwatch')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Keyboard"
-                    alt="Keyboard">
-
-                <h3>Keyboard</h3>
-
-                <p>Wireless computer keyboard</p>
-
-                <p class="price">₹899</p>
-
-                <button class="cart"
-                    onclick="addToCart('Keyboard')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Power+Bank"
-                    alt="Power Bank">
-
-                <h3>Power Bank</h3>
-
-                <p>10000mAh portable power bank</p>
-
-                <p class="price">₹799</p>
-
-                <button class="cart"
-                    onclick="addToCart('Power Bank')">
-                    Add to Cart
-                </button>
-
-            </div>
-
+        <div class="product-card">
+            <h3>Laptop</h3>
+            <p>Category: Electronics</p>
+            <p>Price: ₹55,000</p>
+            <p>Stock: 10</p>
+            <button>Add To Cart</button>
         </div>
 
-
-        <!-- BOOKS -->
-        <h3 class="category-title">📚 Books</h3>
-
-        <div class="products">
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Java"
-                    alt="Java Book">
-
-                <h3>Java Programming</h3>
-
-                <p>Complete Java programming guide</p>
-
-                <p class="price">₹599</p>
-
-                <button class="cart"
-                    onclick="addToCart('Java Programming Book')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=C+Programming"
-                    alt="C Programming Book">
-
-                <h3>C Programming</h3>
-
-                <p>Learn C programming from basics</p>
-
-                <p class="price">₹499</p>
-
-                <button class="cart"
-                    onclick="addToCart('C Programming Book')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Python"
-                    alt="Python Book">
-
-                <h3>Python Programming</h3>
-
-                <p>Python programming for beginners</p>
-
-                <p class="price">₹699</p>
-
-                <button class="cart"
-                    onclick="addToCart('Python Programming Book')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Data+Structures"
-                    alt="Data Structures Book">
-
-                <h3>Data Structures</h3>
-
-                <p>Learn important data structures</p>
-
-                <p class="price">₹749</p>
-
-                <button class="cart"
-                    onclick="addToCart('Data Structures Book')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Computer+Networks"
-                    alt="Computer Networks Book">
-
-                <h3>Computer Networks</h3>
-
-                <p>Networking concepts and fundamentals</p>
-
-                <p class="price">₹799</p>
-
-                <button class="cart"
-                    onclick="addToCart('Computer Networks Book')">
-                    Add to Cart
-                </button>
-
-            </div>
-
-
-            <div class="product">
-
-                <img
-                    src="https://via.placeholder.com/250x180?text=Novel"
-                    alt="English Novel">
-
-                <h3>English Novel</h3>
-
-                <p>Popular fiction novel</p>
-
-                <p class="price">₹399</p>
-
-                <button class="cart"
-                    onclick="addToCart('English Novel')">
-                    Add to Cart
-                </button>
-
-            </div>
-
+        <div class="product-card">
+            <h3>Mouse</h3>
+            <p>Category: Electronics</p>
+            <p>Price: ₹700</p>
+            <p>Stock: 25</p>
+            <button>Add To Cart</button>
         </div>
 
-    </section>
+        <div class="product-card">
+            <h3>Java Book</h3>
+            <p>Category: Books</p>
+            <p>Price: ₹500</p>
+            <p>Stock: 20</p>
+            <button>Add To Cart</button>
+        </div>
 
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-
-        <p>© 2026 IndiraHub | Electronics & Books Store</p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-    <script>
-
-        function addToCart(productName) {
-
-            alert(productName + " added to cart!");
-
-        }
-
-
-        function logout() {
-
-            window.location.href = "login.html";
-
-        }
-
-    </script>
+</div>
 
 </body>
-
-</html>        
-
-                
-        
-
-            
-
-                            
+</html>
