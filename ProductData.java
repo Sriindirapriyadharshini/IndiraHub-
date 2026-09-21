@@ -4,48 +4,57 @@ public class ProductData {
 
     public static ArrayList<Product> products = new ArrayList<>();
 
-    private static int nextId = 1;
-
     static {
+
         products.add(new Product(
-            nextId++, "Laptop", "Electronics",
-            55000, 10, 2
+                1,
+                "The Enchanted Library",
+                "A. Morgan",
+                499,
+                10,
+                "Fantasy",
+                "assets/book1.jpg"
         ));
 
         products.add(new Product(
-            nextId++, "Mouse", "Electronics",
-            700, 25, 2
+                2,
+                "The Last Alchemist",
+                "R. Blake",
+                599,
+                8,
+                "Adventure",
+                "assets/book2.jpg"
         ));
 
         products.add(new Product(
-            nextId++, "Java Book", "Books",
-            500, 20, 2
+                3,
+                "Whispers of the Moon",
+                "L. Carter",
+                399,
+                15,
+                "Mystery",
+                "assets/book3.jpg"
+        ));
+
+        products.add(new Product(
+                4,
+                "The Hidden Kingdom",
+                "M. Stone",
+                699,
+                6,
+                "Fantasy",
+                "assets/book4.jpg"
         ));
     }
 
-    public static Product addProduct(
-            String name,
-            String category,
-            double price,
-            int quantity,
-            int sellerId) {
-
-        Product product = new Product(
-            nextId++,
-            name,
-            category,
-            price,
-            quantity,
-            sellerId
-        );
-
+    public static void addProduct(Product product) {
         products.add(product);
-
-        return product;
     }
 
-    public static Product findById(int id) {
+    public static Product findProduct(int id) {
+
         for (Product product : products) {
+
             if (product.getId() == id) {
                 return product;
             }
@@ -54,9 +63,12 @@ public class ProductData {
         return null;
     }
 
-    public static void removeProduct(int id) {
-        products.removeIf(product ->
-            product.getId() == id
-        );
+    public static void deleteProduct(int id) {
+
+        Product product = findProduct(id);
+
+        if (product != null) {
+            products.remove(product);
+        }
     }
 }
