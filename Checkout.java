@@ -1,48 +1,37 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Checkout {
 
-    public static void checkout(
-            User customer,
-            Cart cart) {
+    public static Order placeOrder(User user, Cart cart) {
 
-        Scanner sc = new Scanner(System.in);
+        ArrayList<OrderItem> items = new ArrayList<>();
 
-        if (cart.getItems().isEmpty()) {
-            System.out.println("Cart is empty.");
-            return;
-        }
+        for (Product product : cart.getProducts()) {
 
-        cart.displayCart();
-
-        System.out.print("\nConfirm order? (yes/no): ");
-        String answer = sc.nextLine();
-
-        if (!answer.equalsIgnoreCase("yes")) {
-            System.out.println("Order cancelled.");
-            return;
-        }
-
-        for (OrderItem item : cart.getItems()) {
-
-            Product product = item.getProduct();
-
-            product.setQuantity(
-                product.getQuantity() -
-                item.getQuantity()
+            OrderItem item = new OrderItem(
+                    product.getId(),
+                    product.getName(),
+                    product.getPrice(),
+                    1
             );
+
+            items.add(item);
         }
 
-        Order order = OrderData.createOrder(
-            customer.getId(),
-            cart.getItems(),
-            cart.getTotal()
+        int orderId = OrderData.orders.size() + 1;
+
+        Order order = new Order(
+                orderId,
+                user.getName(),
+                user.getEmail(),
+                items,
+                cart.getTotal()
         );
 
-        System.out.println("\nOrder placed successfully.");
-        System.out.println("Order ID: " + order.getOrderId());
-        System.out.println("Total: Rs." + order.getTotal());
+        OrderData.addOrder(order);
 
         cart.clear();
+
+        return order;
     }
 }
