@@ -1,29 +1,25 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class SearchProduct {
 
-    public static void search() {
+    public static ArrayList<Product> search(String keyword) {
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter product name: ");
-        String keyword = sc.nextLine();
-
-        boolean found = false;
+        ArrayList<Product> result = new ArrayList<>();
 
         for (Product product : ProductData.products) {
 
             if (product.getName()
                     .toLowerCase()
+                    .contains(keyword.toLowerCase())
+                    ||
+                product.getAuthor()
+                    .toLowerCase()
                     .contains(keyword.toLowerCase())) {
 
-                System.out.println(product);
-                found = true;
+                result.add(product);
             }
         }
 
-        if (!found) {
-            System.out.println("Product not found.");
-        }
+        return result;
     }
 }
