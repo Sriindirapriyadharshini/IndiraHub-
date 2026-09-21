@@ -1,28 +1,38 @@
 import java.util.ArrayList;
 
 public class Order {
+
     private int orderId;
-    private int customerId;
+    private String customerName;
+    private String customerEmail;
     private ArrayList<OrderItem> items;
     private double total;
     private String status;
 
-    public Order(int orderId, int customerId,
+    public Order(int orderId,
+                 String customerName,
+                 String customerEmail,
                  ArrayList<OrderItem> items,
                  double total) {
+
         this.orderId = orderId;
-        this.customerId = customerId;
-        this.items = new ArrayList<>(items);
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.items = items;
         this.total = total;
-        this.status = "PLACED";
+        this.status = "Order Placed";
     }
 
     public int getOrderId() {
         return orderId;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
     public ArrayList<OrderItem> getItems() {
@@ -39,20 +49,5 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public void displayOrder() {
-        System.out.println("\nOrder ID: " + orderId);
-        System.out.println("Customer ID: " + customerId);
-        System.out.println("Status: " + status);
-
-        for (OrderItem item : items) {
-            System.out.println(
-                item.getProduct().getName() +
-                " x " + item.getQuantity()
-            );
-        }
-
-        System.out.println("Total: Rs." + total);
     }
 }
