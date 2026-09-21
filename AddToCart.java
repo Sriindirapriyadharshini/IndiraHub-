@@ -1,36 +1,12 @@
-import java.util.Scanner;
-
 public class AddToCart {
 
-    public static void add(Cart cart) {
+    public static void add(Cart cart, int productId) {
 
-        Scanner sc = new Scanner(System.in);
+        Product product = ProductData.findProduct(productId);
 
-        System.out.print("Enter product ID: ");
-        int id = sc.nextInt();
+        if (product != null && product.getQuantity() > 0) {
 
-        Product product = ProductData.findById(id);
-
-        if (product == null) {
-            System.out.println("Product not found.");
-            return;
+            cart.addProduct(product);
         }
-
-        System.out.print("Enter quantity: ");
-        int quantity = sc.nextInt();
-
-        if (quantity <= 0) {
-            System.out.println("Invalid quantity.");
-            return;
-        }
-
-        if (quantity > product.getQuantity()) {
-            System.out.println("Not enough stock.");
-            return;
-        }
-
-        cart.addItem(product, quantity);
-
-        System.out.println("Product added to cart.");
     }
 }
