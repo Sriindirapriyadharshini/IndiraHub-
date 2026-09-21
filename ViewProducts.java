@@ -1,16 +1,14 @@
 public class ViewProducts {
 
-    public static void display() {
-
-        System.out.println("\n===== ALL PRODUCTS =====");
-
-        if (ProductData.products.isEmpty()) {
-            System.out.println("No products available.");
-            return;
-        }
+    public static void showProducts() {
 
         for (Product product : ProductData.products) {
-            System.out.println(product);
+
+            System.out.println(
+                    product.getId() + " - " +
+                    product.getName() + " - ₹" +
+                    product.getPrice()
+            );
         }
     }
 }
