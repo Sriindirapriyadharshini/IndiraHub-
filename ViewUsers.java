@@ -1,11 +1,16 @@
 public class ViewUsers {
 
-    public static void display() {
-
-        System.out.println("\n===== ALL USERS =====");
+    public static void showUsers() {
 
         for (User user : UserData.users) {
-            System.out.println(user);
+
+            System.out.println(
+                    user.getName() +
+                    " | " +
+                    user.getEmail() +
+                    " | " +
+                    user.getRole()
+            );
         }
     }
 }
