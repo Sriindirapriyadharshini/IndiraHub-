@@ -1,45 +1,66 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-    <title>IndiraHub - Register</title>
+
+    <title>Login - IndiraHub</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="auth-page">
 
-<div class="container">
 
-    <h1>IndiraHub</h1>
-    <h2>Create Account</h2>
+<div class="auth-box">
+
+    <div class="logo">
+        ✦ INDIRAHUB
+    </div>
+
+    <p class="small-title">
+        WELCOME BACK
+    </p>
+
+    <h1>Enter the Library</h1>
 
     <form>
 
-        <label>Name</label>
-        <input type="text" placeholder="Enter name">
-
         <label>Email</label>
-        <input type="email" placeholder="Enter email">
+
+        <input
+            type="email"
+            placeholder="Enter your email"
+            required
+        >
+
 
         <label>Password</label>
-        <input type="password" placeholder="Enter password">
 
-        <label>Register As</label>
+        <input
+            type="password"
+            placeholder="Enter your password"
+            required
+        >
 
-        <select>
-            <option>Customer</option>
-            <option>Seller</option>
-        </select>
 
-        <button type="submit">Register</button>
+        <button class="button">
+            Login
+        </button>
 
     </form>
 
+
     <p>
-        Already have an account?
-        <a href="login.html">Login</a>
+        New to IndiraHub?
+        <a href="register.html">
+            Create an account
+        </a>
     </p>
 
 </div>
 
 </body>
+
 </html>
