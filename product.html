@@ -1,58 +1,168 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-    <title>IndiraHub - Products</title>
+
+    <title>Books - IndiraHub</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <header>
-    <h1>IndiraHub</h1>
+
+    <div class="logo">
+        ✦ INDIRAHUB
+    </div>
 
     <nav>
-        <a href="product.html">Products</a>
+
+        <a href="index.html">Home</a>
+        <a href="product.html">Books</a>
         <a href="cart.html">Cart</a>
         <a href="orders.html">Orders</a>
-        <a href="login.html">Logout</a>
+
     </nav>
+
 </header>
 
-<div class="page">
 
-    <h2>Products</h2>
+<section class="page-title">
 
-    <input type="text" placeholder="Search products">
+    <p class="small-title">
+        THE GRAND LIBRARY
+    </p>
 
-    <div class="products">
+    <h1>Explore Books</h1>
 
-        <div class="product-card">
-            <h3>Laptop</h3>
-            <p>Category: Electronics</p>
-            <p>Price: ₹55,000</p>
-            <p>Stock: 10</p>
-            <button>Add To Cart</button>
+    <p>
+        Find your next unforgettable story.
+    </p>
+
+</section>
+
+
+<section class="products">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search books or authors..."
+        >
+
+        <button>
+            Search
+        </button>
+
+    </div>
+
+
+    <div class="book-grid">
+
+
+        <div class="book-card">
+
+            <img src="assets/book1.jpg">
+
+            <span class="category">
+                Fantasy
+            </span>
+
+            <h3>The Enchanted Library</h3>
+
+            <p>A. Morgan</p>
+
+            <h4>₹499</h4>
+
+            <a href="cart.html"
+               class="button small-button">
+
+                Add to Cart
+
+            </a>
+
         </div>
 
-        <div class="product-card">
-            <h3>Mouse</h3>
-            <p>Category: Electronics</p>
-            <p>Price: ₹700</p>
-            <p>Stock: 25</p>
-            <button>Add To Cart</button>
+
+        <div class="book-card">
+
+            <img src="assets/book2.jpg">
+
+            <span class="category">
+                Adventure
+            </span>
+
+            <h3>The Last Alchemist</h3>
+
+            <p>R. Blake</p>
+
+            <h4>₹599</h4>
+
+            <a href="cart.html"
+               class="button small-button">
+
+                Add to Cart
+
+            </a>
+
         </div>
 
-        <div class="product-card">
-            <h3>Java Book</h3>
-            <p>Category: Books</p>
-            <p>Price: ₹500</p>
-            <p>Stock: 20</p>
-            <button>Add To Cart</button>
+
+        <div class="book-card">
+
+            <img src="assets/book3.jpg">
+
+            <span class="category">
+                Mystery
+            </span>
+
+            <h3>Whispers of the Moon</h3>
+
+            <p>L. Carter</p>
+
+            <h4>₹399</h4>
+
+            <a href="cart.html"
+               class="button small-button">
+
+                Add to Cart
+
+            </a>
+
+        </div>
+
+
+        <div class="book-card">
+
+            <img src="assets/book4.jpg">
+
+            <span class="category">
+                Fantasy
+            </span>
+
+            <h3>The Hidden Kingdom</h3>
+
+            <p>M. Stone</p>
+
+            <h4>₹699</h4>
+
+            <a href="cart.html"
+               class="button small-button">
+
+                Add to Cart
+
+            </a>
+
         </div>
 
     </div>
 
-</div>
+</section>
 
 </body>
+
 </html>
