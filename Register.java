@@ -1,49 +1,21 @@
-import java.util.Scanner;
-
 public class Register {
 
-    public static void register() {
+    public static User registerUser(String name,
+                                    String email,
+                                    String password) {
 
-        Scanner sc = new Scanner(System.in);
+        int id = UserData.users.size() + 1;
 
-        System.out.println("\n===== REGISTER =====");
-
-        System.out.print("Name: ");
-        String name = sc.nextLine();
-
-        System.out.print("Email: ");
-        String email = sc.nextLine();
-
-        if (UserData.findByEmail(email) != null) {
-            System.out.println("Email already exists.");
-            return;
-        }
-
-        System.out.print("Password: ");
-        String password = sc.nextLine();
-
-        System.out.println("1. Customer");
-        System.out.println("2. Seller");
-
-        System.out.print("Choose role: ");
-        int choice = sc.nextInt();
-
-        String role;
-
-        if (choice == 2) {
-            role = "SELLER";
-        } else {
-            role = "CUSTOMER";
-        }
-
-        User user = UserData.register(
-            name,
-            email,
-            password,
-            role
+        User user = new User(
+                id,
+                name,
+                email,
+                password,
+                "CUSTOMER"
         );
 
-        System.out.println("Registration successful.");
-        System.out.println("User ID: " + user.getId());
+        UserData.addUser(user);
+
+        return user;
     }
 }
