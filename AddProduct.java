@@ -1,5 +1,5 @@
 public class AddProduct {
-
+public class main{
     public static void add(String name,
                            String author,
                            double price,
