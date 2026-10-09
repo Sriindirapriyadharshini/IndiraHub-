@@ -15,8 +15,8 @@ public class AddProduct {
                 author,
                 price,
                 quantity,
-                category,
-                image
+                category;
+                image,
         );
 
         ProductData.addProduct(product);
