@@ -21,4 +21,4 @@ public class AddProduct {
 
         ProductData.addProduct(product);
     }
-}
+};
