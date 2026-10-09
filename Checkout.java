@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Checkout {
-
+public class main{
     public static Order placeOrder(User user, Cart cart) {
 
         ArrayList<OrderItem> items = new ArrayList<>();
